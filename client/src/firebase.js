@@ -1,3 +1,4 @@
+
 // v9 compat packages are API compatible with v8 code
 import Firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';

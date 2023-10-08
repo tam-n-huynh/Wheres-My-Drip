@@ -7,8 +7,11 @@ import logo from './images/logo.png'
 //Pages
 import HomePage from './Components/HomePage';
 import MapsPage from './Components/MapsPage';
+import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
 import AddWaterPage from './Components/AddWaterPage';
-import ProfilePage from './Components/ProfilePage';
+import ProfilePage from './Components/UserProfile';
+
 
 
 function App() {
@@ -39,6 +42,8 @@ function App() {
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
                 <Route path="/map" element={<MapsPage/>}/>
+                <Route path="/signin" element={<SignIn/>}/>
+                <Route path="/signup" element={<SignUp/>}/>
             </Routes>
         </Router>
     </div>
