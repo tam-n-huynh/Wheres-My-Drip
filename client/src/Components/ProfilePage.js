@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MapsPage = () => {
+const ProfilePage = () => {
     return (
         <div>
-            Maps Page
+            Profile
         </div>
     )
 }
 
-export default MapsPage;
+export default ProfilePage;
