@@ -1,0 +1,20 @@
+.Add-Drip-Buttons {
+    position: absolute;
+    z-index: 10;
+    bottom: 1.5em;
+    left: 1em;
+}
+
+.Drip-Button {
+    background-color: #4057ca;
+    color: white;
+    font-size: 25px;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5%;
+    opacity: 85%;
+}
+
+.Drip-Button + .Drip-Button {
+    margin-left: 1em;
+}
