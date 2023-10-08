@@ -11,8 +11,10 @@ import AddWaterPage from './Components/AddWaterPage';
 import ProfilePage from './Components/ProfilePage';
 
 
-
 function App() {
+  const defaultCenter = { lat: 32, lng: -82 }; // Replace with your desired coordinates
+  const defaultZoom = 10;
+
   return (
       <div className="App">
           <Router>
