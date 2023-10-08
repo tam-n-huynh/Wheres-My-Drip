@@ -6,6 +6,7 @@ import HomePage from './Components/HomePage';
 import MapsPage from './Components/MapsPage';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
+import UserProfile from './Components/UserProfile';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/maps" element={<MapsPage/>}/>
           <Route path="/signin" element={<SignIn/>}/>
           <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/userprofile" element={<UserProfile/>}/>
         </Routes>
       </Router>
     </div>

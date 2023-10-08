@@ -1,13 +1,16 @@
 // src/components/SignUp.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
 import water from '../img/waterfountain.jpeg';
+import { db } from '../firebase';
+
 
 function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useHistory
 
   const handleSignUp = () => {
     // Here, you can add your sign-up logic.
@@ -15,6 +18,19 @@ function SignUp() {
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Password:', password);
+
+    db.collection('Users').add(
+        {
+            Email: email, 
+            Name: name, 
+            Password: password,
+            FountainsFound: 0
+        }
+    );
+    localStorage.setItem("isSignedIn", true);
+    localStorage.setItem("userEmail", email);
+    
+    navigate('/');
   };
 
   return (

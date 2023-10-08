@@ -1,6 +1,7 @@
 // src/components/SignIn.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { firebase, db } from '../firebase';
 
 import './SignIn.css';
 
@@ -8,16 +9,55 @@ function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Initialize useHistory
+  const [temp, setTemp] = useState(false);
+  
+  const checkUserCredentials = async (email, password) => {
+    try {
+      // Query Firestore to find a user with the given email and password
+      const userRef = firebase.firestore().collection('Users');
+      const docRef = await userRef.where('Email', '==', email).where('Password', '==', password).get();
+    
+      console.log(docRef);
+      console.log('Email:', email);
+      console.log('Password:', password);
+  
+      // Check if a user with the provided credentials exists
+      if (!docRef.empty) {
+        // User with matching email and password found
+        const userData = docRef.docs[0].data();
+        return userData;
+      } else {
+        // No user found with the provided credentials
+        console.log("empty")
+      }
+    } catch (error) {
+      // Handle any errors here
+      console.error('Error checking user credentials:', error);
+      throw error; // You can handle the error as needed
+    }
+  };
 
-  const handleSignIn = () => {
+  const handleSignIn = async() => {
     // Here, you can add your authentication logic.
     // For demonstration purposes, we're just printing the email and password to the console.
-    localStorage.setItem("isSignedIn", true);
 
-    console.log('Email:', email);
-    console.log('Password:', password);
+    // Check if the user exists in Firestore
+    const userData = await checkUserCredentials(email, password);
+    console.log(userData)
+    if (userData) {
+        // User found
+        localStorage.setItem("isSignedIn", true);
+        localStorage.setItem("userEmail", email);
+        navigate('/');
+        // console.log(email);
+        // console.log(userData.Name);
+    }   else {
+        // No user found
+        console.log("ERROR");
+        // localStorage.setItem("userEmail", email);
+    }  
 
-    navigate('/');
+    
 
   };
 
