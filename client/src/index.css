@@ -7,24 +7,34 @@
 /* Custom properties */
 
 :root {
-  --ff-primary: ;
-  --ff-secondary: ;
+    --ff-primary: 'Cocon';
+    --ff-secondary: 'ProximaNova';
+    --fw-ref: 300;
+    --fw-bold: 900;
+    --clr-light: #AFCBFF;
+    --clr-dark: #00113D;
+    --clr-tile2: #00E893;
+    --clr-accent: #87FFC1;
+    --clr-bg: #4057CA;
+    --fs-h1: 3rem;
+    --fs-h2: 2,25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25), 0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+}
 
-  --fw-ref: 300;
-  --fw-bold: 900;
+@font-face {
+    font-family: 'Cocon';
+    src: url('./fonts/cocon.otf');
+    font-weight: normal;
+    font-style: normal;
+}
 
-  --clr-light: ;
-  --clr-dark: ;
-  --clr-tile2: ;
-  --clr-accent: ;
-
-  --fs-h1: 3rem;
-  --fs-h2: 2,25rem;
-  --fs-h3: 1.25rem;
-  --fs-body: 1rem;
-
-  --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
-        0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('./fonts/ProximaNova.otf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @media (min-width: 800px) {
@@ -43,7 +53,7 @@ html {
 }
 
 body {
-  color: var(--clr-dark);
+  color: var(--clr-light);
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
@@ -130,5 +140,42 @@ h3 { font-size: var(--fs-h3) }
 
 /* Temp Section */
 .App {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--ff-primary);
+  background-color: var(--clr-bg);
+  height : 100vh;
+}
+
+.nav {
+    background-color: var(--clr-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--clr-dark);
+}
+.menu-button {
+    font-family: var(--ff-primary);
+    font-size: min(40px, 4vw);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    border: none;
+    border-radius: 10px;
+    width: 15vw;
+    height: 10vh;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.link {
+    vertical-align: middle;
+    display: flex;
+    text-decoration: none;
+}
+
+.logo{
+    width: 15vw;
+    height: auto;
+}
+
+.menu-button:hover {
+    background-color: var(--clr-tile2);
 }

@@ -121,4 +121,4 @@ const MapsPage = ({ center, zoom }) => {
     );
 };
 
-export default MapsPage;
+export default MapPage;
