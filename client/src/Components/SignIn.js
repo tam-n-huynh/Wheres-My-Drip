@@ -1,17 +1,24 @@
 // src/components/SignIn.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 import './SignIn.css';
 
 function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useHistory
 
   const handleSignIn = () => {
     // Here, you can add your authentication logic.
     // For demonstration purposes, we're just printing the email and password to the console.
+    localStorage.setItem("isSignedIn", true);
+
     console.log('Email:', email);
     console.log('Password:', password);
+
+    navigate('/');
+
   };
 
   return (
