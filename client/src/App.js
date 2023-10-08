@@ -6,7 +6,7 @@ import logo from './images/logo.png'
 
 //Pages
 import HomePage from './Components/HomePage';
-import MapPage from './Components/MapPage';
+import MapsPage from './Components/MapsPage';
 import AddWaterPage from './Components/AddWaterPage';
 import ProfilePage from './Components/ProfilePage';
 
@@ -23,7 +23,7 @@ function App() {
                 <Link className="link" to="/">
                     <button className="menu-button" >Home</button>
                 </Link>
-                <Link className="link" to="/map">
+                <Link className="link" to="/maps">
                     <button className="menu-button">Map</button>
                 </Link>
                 <Link className="link" to="/add">
@@ -38,7 +38,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
-                <Route path="/map" element={<MapPage/>}/>
+                <Route path="/map" element={<MapsPage/>}/>
             </Routes>
         </Router>
     </div>
