@@ -4,7 +4,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-    apiKey: "",
+    apiKey: process.env.FIREBASE_API_KEY,
     authDomain: "sasehacksfall2023.firebaseapp.com",
     projectId: "sasehacksfall2023",
     storageBucket: "sasehacksfall2023.appspot.com",
