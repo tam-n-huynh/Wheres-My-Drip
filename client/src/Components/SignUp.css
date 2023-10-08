@@ -1,0 +1,109 @@
+/* src/components/SignUp.css */
+
+.signup-container {
+    width: 100%;
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+  
+  .signup-content {
+    display: flex;
+    align-items: flex-start; /* Align elements at the top of the container */
+    text-align: center;
+  }
+  
+  .signup-image img {
+    height: 100%; /* Set the image height to match the signup box */
+    max-width: 100%;
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left only */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-right: 0px; /* Add spacing between the image and form */
+  }
+  
+  .signup-form {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-width: 400px; /* Limit the form's width for readability */
+    padding: 20px;
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right only */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+  }
+  
+  /* Media query for screens smaller than 768px (typical mobile size) */
+  @media (max-width: 768px) {
+    .signup-content {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+      align-items: center;
+    }
+  
+    .signup-image img {
+      margin-right: 0; /* Remove spacing between the image and form on small screens */
+      border-radius: 10px; /* Apply rounded corners to the image */
+    }
+  
+    .signup-form {
+      border-radius: 10px; /* Apply rounded corners to the form */
+    }
+  }
+  
+  
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Link to Sign-In */
+  p {
+    margin-top: 10px;
+  }
+  
+  p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  
