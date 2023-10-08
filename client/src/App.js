@@ -23,7 +23,7 @@ function App() {
           <Router>
             <div className="nav">
                 <img src={logo} className="logo" />
-                <Link className="link" to="/">
+                <Link className="link" to="/home">
                     <button className="menu-button" >Home</button>
                 </Link>
                 <Link className="link" to="/maps">
@@ -38,12 +38,12 @@ function App() {
             </div>
         
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<SignUp />} />
+                <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
                 <Route path="/map" element={<MapsPage/>}/>
                 <Route path="/signin" element={<SignIn/>}/>
-                <Route path="/signup" element={<SignUp/>}/>
             </Routes>
         </Router>
     </div>

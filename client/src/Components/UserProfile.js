@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './UserProfile.css';
 import test from '../img/userlogo.jpeg';
 import { firebase, db } from '../firebase';
+import SignUp from './SignUp';
 
 const UserProfile = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -47,18 +48,27 @@ const UserProfile = () => {
   }, []);
 
   return (
-    <div className="user-profile">
-      <div className="user-header">
-        <img src={test} alt="User" className="user-image" />
-        <h2 className="user-name">{name}</h2>
-      </div>
-      <div className="user-details">
-        <p className="user-email">Email: {userEmail}</p>
-        <p className="user-fountains">Fountains Found: {fountainsFound}</p>
-        {/* Add other user details here */}
-      </div>
+    <div>
+        {isSignedIn ? (
+            <div className="user-profile">
+              <div className="user-header">
+                <img src={test} alt="User" className="user-image" />
+                <h2 className="user-name">{name}</h2>
+              </div>
+              <div className="user-details">
+                <p className="user-email">Email: {userEmail}</p>
+                <p className="user-fountains">Fountains Found: {fountainsFound}</p>
+                {/* Add other user details here */}
+              </div>
+            </div>
+        ) : (
+          <div>
+              <SignUp />
+          </div>
+        )}
     </div>
-  );
+    
+);
 };
 
 export default UserProfile;
