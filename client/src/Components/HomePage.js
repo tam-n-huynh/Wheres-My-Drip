@@ -19,6 +19,7 @@ const HomePage = () => {
     const handleSignOut = () => {
         // Clear the sign-in state in localStorage
         localStorage.removeItem('isSignedIn');
+        localStorage.removeItem('userEmail');
         // Set isSignedIn state to false
         setIsSignedIn(false);
       };
