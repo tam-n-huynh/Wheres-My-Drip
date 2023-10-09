@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import logo from './images/logo.png'
-//import { ReactComponent as drop } from './images/map-pin.svg';
+import user from './images/user.svg';
 
 //Pages
 import HomePage from './Components/HomePage';
@@ -21,7 +21,7 @@ function App() {
   return (
       <div className="App">
           <Router>
-            <div className="nav">
+            <div className="nav reactive-nav">
                 <img src={logo} className="logo" />
                 <Link className="link" to="/home">
                     <button className="menu-button" >Home</button>
@@ -30,10 +30,12 @@ function App() {
                     <button className="menu-button">Map</button>
                 </Link>
                 <Link className="link" to="/add">
-                    <button className="menu-button">Add Drip</button>
+                      <button className="menu-button">+ Drip</button>
                 </Link>
                 <Link className="link" to="/profile">
-                    <button className="menu-button">Profile</button>
+                      <button className="menu-button profile-button">
+                          <span className="profile"><img src={user}/></span>
+                      </button>
                 </Link>
             </div>
         
