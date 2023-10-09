@@ -28,11 +28,13 @@ function SignIn() {
         return userData;
       } else {
         // No user found with the provided credentials
-        console.log("empty")
+          console.log("empty")
+          alert("Incorrect Username or Password!");
       }
     } catch (error) {
       // Handle any errors here
-      console.error('Error checking user credentials:', error);
+        console.error('Error checking user credentials:', error);
+        alert("Incorrect Username or Password!");
       throw error; // You can handle the error as needed
     }
   };
