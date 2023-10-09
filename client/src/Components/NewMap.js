@@ -98,7 +98,9 @@ const NewMap = ({ center, zoom }) => {
     isLoaded ? (
         <div className="MapsPage">
             <div className="Add-Drip-Buttons">
-                <button className="Drip-Button" onClick={handleSubmit} >Add Drip</button>
+                  {isSignedIn ? (
+                      <button className="Drip-Button" onClick={handleSubmit} >Add Drip</button>
+                  ) : null}
             </div>
             <GoogleMap
                 mapContainerStyle={{ width: '100%', height: '100vh' }}
