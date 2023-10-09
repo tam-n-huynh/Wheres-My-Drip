@@ -6,9 +6,12 @@ import user from './images/user.svg';
 
 //Pages
 import HomePage from './Components/HomePage';
-import MapPage from './Components/MapPage';
+import MapsPage from './Components/MapsPage';
+import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
 import AddWaterPage from './Components/AddWaterPage';
-import ProfilePage from './Components/ProfilePage';
+import ProfilePage from './Components/UserProfile';
+
 
 
 function App() {
@@ -20,10 +23,10 @@ function App() {
           <Router>
             <div className="nav reactive-nav">
                 <img src={logo} className="logo" />
-                <Link className="link" to="/">
+                <Link className="link" to="/home">
                     <button className="menu-button" >Home</button>
                 </Link>
-                <Link className="link" to="/map">
+                <Link className="link" to="/maps">
                     <button className="menu-button">Map</button>
                 </Link>
                 <Link className="link" to="/add">
@@ -37,10 +40,12 @@ function App() {
             </div>
         
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<SignUp />} />
+                <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
-                <Route path="/map" element={<MapPage/>}/>
+                <Route path="/map" element={<MapsPage/>}/>
+                <Route path="/signin" element={<SignIn/>}/>
             </Routes>
         </Router>
     </div>
