@@ -9,7 +9,7 @@ import "./MapsPage.css";
 const AddWaterPage = ({ center, zoom }) => {
 
     const {isLoaded} = useLoadScript({ 
-        googleMapsApiKey: "AIzaSyA9N_FH4wPhIwVqXV-9jlxto0MmzRavllU",
+        googleMapsApiKey: "",
     });
 
     const [latitude, setLatitude] = useState(null);
