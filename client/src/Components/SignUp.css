@@ -18,7 +18,7 @@
   
   .signup-image img {
     height: 100%; /* Set the image height to match the signup box */
-    max-width: 100%;
+    max-width: 430px;
     border-radius: 10px 0 0 10px; /* Rounded corners on the left only */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     margin-right: 0px; /* Add spacing between the image and form */
