@@ -11,6 +11,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import AddWaterPage from './Components/AddWaterPage';
 import ProfilePage from './Components/UserProfile';
+import NewMap from './Components/NewMap';
 
 
 
@@ -26,8 +27,11 @@ function App() {
                 <Link className="link" to="/home">
                     <button className="menu-button" >Home</button>
                 </Link>
-                <Link className="link" to="/maps">
-                    <button className="menu-button">Drip Map</button>
+                <Link className="link" to="/newmap">
+                    <button className="menu-button">Map</button>
+                </Link>
+                <Link className="link" to="/add">
+                      <button className="menu-button">+ Drip</button>
                 </Link>
                 <Link className="link" to="/profile">
                       <button className="menu-button profile-button">
@@ -41,8 +45,9 @@ function App() {
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
-                <Route path="/map" element={<MapsPage/>}/>
+                <Route path="/maps" element={<MapsPage/>}/>
                 <Route path="/signin" element={<SignIn/>}/>
+                <Route path="/newmap" element={<NewMap/>}/>
             </Routes>
         </Router>
     </div>
