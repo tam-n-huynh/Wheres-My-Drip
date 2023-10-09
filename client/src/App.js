@@ -30,9 +30,6 @@ function App() {
                 <Link className="link" to="/newmap">
                     <button className="menu-button">Map</button>
                 </Link>
-                <Link className="link" to="/add">
-                      <button className="menu-button">+ Drip</button>
-                </Link>
                 <Link className="link" to="/profile">
                       <button className="menu-button profile-button">
                           <span className="profile"><img src={user}/></span>
