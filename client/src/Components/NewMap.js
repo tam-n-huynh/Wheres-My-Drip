@@ -10,7 +10,7 @@ import Drop from "../img/drop.png";
 const NewMap = ({ center, zoom }) => {
 
     const {isLoaded} = useLoadScript({ 
-        googleMapsApiKey: "",
+        googleMapsApiKey: "AIzaSyCt9A4-RUvMU5P-ttrURke6ktO4Ju2pKbc",
     });
 
     const [latitude, setLatitude] = useState(null);

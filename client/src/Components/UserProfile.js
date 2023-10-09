@@ -10,6 +10,16 @@ const UserProfile = () => {
   const [email, setEmail] = useState('');
   const [fountainsFound, setFountainsFound] = useState(0);
   const [name, setName] = useState('');
+  const [numberData, setNumberData] = useState([]);
+
+  const handleSignOut = () => {
+    // Clear the sign-in state in localStorage
+    localStorage.removeItem('isSignedIn');
+    localStorage.removeItem('userEmail');
+    // Set isSignedIn state to false
+    setIsSignedIn(false);
+  };
+
 
   useEffect(() => {
     // Check if the user is signed in by reading from localStorage
@@ -41,6 +51,26 @@ const UserProfile = () => {
         // Handle any errors here
         console.error('Error fetching user data:', error);
       }
+
+      try {
+        const userRef = firebase.firestore().collection('Markers');
+        const querySnapshot = await userRef.where('username', '==', storedUserEmail).get();
+
+        const fetchedData = [];
+        querySnapshot.forEach((doc) => {
+          const { username, latitude, longitude } = doc.data();
+          fetchedData.push({ username, latitude, longitude });
+        });
+
+        setNumberData(fetchedData);
+
+        console.log(numberData);
+
+        
+      } catch (error) {
+        // Handle any errors here
+        console.error('Error fetching user data:', error);
+      }
     };
 
     // Call the async function to fetch user data
@@ -57,9 +87,10 @@ const UserProfile = () => {
               </div>
               <div className="user-details">
                 <p className="user-email">Email: {userEmail}</p>
-                <p className="user-fountains">Fountains Found: {fountainsFound}</p>
+                <p className="user-fountains">Fountains Found: {numberData.length}</p>
                 {/* Add other user details here */}
               </div>
+              <button onClick={handleSignOut}>Sign Out</button>
             </div>
         ) : (
           <div>
