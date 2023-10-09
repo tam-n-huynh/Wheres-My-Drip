@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
-import water from '../img/waterfountain.jpeg';
+import water from '../images/signin_image.png';
 import { db } from '../firebase';
 
 

@@ -20,8 +20,8 @@ function HomePage() {
                     fountains, thus reducing the need to buy plastic bottles when on-the-go.</p>
                 <p className = "mission-text">Powered by those who care about reducing our plastic consumption and waste production, 'Where's My Drip'
                     hopes to have a longstanding impact on the world, one drop at a time.</p>
-                <p className="mission-text">Contribute to our cause by posting a water fountain sighting! Simply press the '+ Drip' tab on the navigation bar
-                    to submit the location and image of a new water fountain.</p>
+                <p className="mission-text">Contribute to our cause by posting a water fountain sighting! Go to our 'Drip Map' to find water fountains  
+                     and submit the location of new ones.</p>
                 <img src={logo} className="big-logo" />
             </div>
             

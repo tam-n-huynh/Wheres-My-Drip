@@ -27,10 +27,7 @@ function App() {
                     <button className="menu-button" >Home</button>
                 </Link>
                 <Link className="link" to="/maps">
-                    <button className="menu-button">Map</button>
-                </Link>
-                <Link className="link" to="/add">
-                      <button className="menu-button">+ Drip</button>
+                    <button className="menu-button">Drip Map</button>
                 </Link>
                 <Link className="link" to="/profile">
                       <button className="menu-button profile-button">
