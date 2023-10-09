@@ -12,12 +12,30 @@
     object-fit: cover; /* Ensures the image fills the circle without stretching */
 }
 
-.bio {
+.bio-1, .bio-2, .bio-3, .bio-4 {
     width: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    opacity: 0;
+    transform: translateY(20%);
+    transition-duration: 2s;
+}
+
+.bio-1 {
+    transition-delay: 0.2s;
+}
+
+.bio-2 {
+    transition-delay: 0.4s;
+}
+
+.bio-3 {
+    transition-delay: 0.6s;
+}
+
+.bio-4 {
+    transition-delay: 0.8s;
 }
 
 .heading {
@@ -25,20 +43,47 @@
     font-size: 5vw;
     height: 7vw;
     margin: 0 0 3vh 0;
+    opacity: 0;
+    transition: 1.5s;
 }
 
-.mission-text{
+.mission-text-1, .mission-text-2, .mission-text-3{
     font-family: var(--ff-secondary);
     width: 70vw;
     text-align:center;
+
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 1s;
 }
+
+.mission-text-1 {
+    transition-delay: 0.3s;
+}
+.mission-text-2 {
+    transition-delay: 0.6s;
+}
+.mission-text-3 {
+    transition-delay: 0.9s;
+}
+
+
 
 .big-logo{
     width:40vw;
+    transform: translateY(20%);
+    opacity: 0;
+    transition-duration: 1s;
+    transition-delay: 1.5s;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0%) translateY(0%);
 }
