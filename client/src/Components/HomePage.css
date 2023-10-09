@@ -83,6 +83,16 @@
     align-items: center;
 }
 
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), transparent;
+    background-image: url("../images/cleanOcea.jpg");
+}
+
 .show {
     opacity: 1;
     transform: translateX(0%) translateY(0%);

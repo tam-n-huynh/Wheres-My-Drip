@@ -7,8 +7,15 @@ import max from '../images/max.jpg';
 import taise from '../images/taise.png';
 import tam from '../images/tam.jpg';
 import hadi from '../images/hadi.jpg';
+import ocean from '../images/cleanOcea.jpg';
 
-function HomePage() {
+
+const HomePage = () => {
+    const { ref: welcomeRef, inView: welcomeVisible} = useInView({
+        triggerOnce: true,
+        threshold: 0.5
+    });
+
     const { ref: containerRef, inView: containerVisible} = useInView({
         triggerOnce: true,
         threshold: 0.5
@@ -19,14 +26,17 @@ function HomePage() {
         threshold: 0.5
     });
 
-
     return (
         <div>
-            <div className={containerVisible ? "heading show" : "heading"} ref={containerRef}>
+            <div class="welcome-container" ref={welcomeRef}>
+                <h1 class={welcomeVisible ? "wel-h show" : "wel-h"}>Welcome to Our Website</h1>
+                <p class={welcomeVisible ? "wel-p show" : "wel-p"}>Your one stop for finding some drip</p>
+            </div>
+            <div className={containerVisible ? "heading show" : "heading"} >
                 <p>Mission Statement</p>
             </div>
             <div className="container">
-                <p className = {containerVisible ? "mission-text-1 show" : "mission-text-1"}>'Where's My Drip' is a student-led project established in Oct. 2023 that formed with the mission to
+                <p className = {containerVisible ? "mission-text-1 show" : "mission-text-1"} ref={containerRef}>'Where's My Drip' is a student-led project established in Oct. 2023 that formed with the mission to
                     reduce the use of plastic water bottles. The 'Where's My Drip' app features a constantly updated map
                     of all the water fountains submitted in the world. By using our app, people can easily and reliably find public water
                     fountains, thus reducing the need to buy plastic bottles when on-the-go.</p>
@@ -67,8 +77,7 @@ function HomePage() {
                 </span>
             </div>
         </div>
-        
-    );
+    )
 }
 
 export default HomePage;
