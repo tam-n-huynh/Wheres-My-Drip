@@ -4,9 +4,10 @@ import {GoogleMap, useLoadScript, Marker} from '@react-google-maps/api';
 import {firebase, db} from '../firebase';
 import customMapStyle from './customMapStyle.json'; // Custom Map Style
 import "./MapsPage.css";
+import Drop from "../img/drop.png";
 
 
-const AddWaterPage = ({ center, zoom }) => {
+const NewMap = ({ center, zoom }) => {
 
     const {isLoaded} = useLoadScript({ 
         googleMapsApiKey: "",
@@ -83,12 +84,13 @@ const AddWaterPage = ({ center, zoom }) => {
         }
     }, [latitude, longitude]);
 
-    const handleSubmit = () => {
-        db.collection("Markers").add({
+    const handleSubmit = async () => {
+        await db.collection("Markers").add({
             username: username,
             latitude: curlat,
             longitude: curlon
         })
+        window.location.reload(false);
     }
 
   return (
@@ -97,11 +99,10 @@ const AddWaterPage = ({ center, zoom }) => {
         <div className="MapsPage">
             <div className="Add-Drip-Buttons">
                 <button className="Drip-Button" onClick={handleSubmit} >Add Drip</button>
-                <button className="Drip-Button">Home</button>
             </div>
             <GoogleMap
                 mapContainerStyle={{ width: '100%', height: '100vh' }}
-                zoom={8}
+                zoom={14}
                 center={{
                     lat: +latitude,
                     lng: +longitude
@@ -121,6 +122,12 @@ const AddWaterPage = ({ center, zoom }) => {
                         lng: item.longitude
                     }}
                     title={item.username}
+                    icon={{
+                        url: Drop, 
+                        scaledSize: new window.google.maps.Size(32, 32), // Adjust the size as needed
+                        origin: new window.google.maps.Point(0, 0),
+                        anchor: new window.google.maps.Point(16, 32) // Adjust the anchor point as needed
+                      }}
                     />
                 ))}
             </GoogleMap>
@@ -131,4 +138,4 @@ const AddWaterPage = ({ center, zoom }) => {
   );
 }
 
-export default AddWaterPage;
+export default NewMap;
