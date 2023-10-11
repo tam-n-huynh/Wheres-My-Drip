@@ -40,13 +40,14 @@ function App() {
             </div>
         
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<HomePage/>} />
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
                 <Route path="/maps" element={<MapsPage/>}/>
                 <Route path="/signin" element={<SignIn/>}/>
                 <Route path="/newmap" element={<NewMap/>}/>
+                <Route path="/signup" element={<SignUp/>}/>
             </Routes>
         </Router>
     </div>

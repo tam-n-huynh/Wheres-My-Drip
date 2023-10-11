@@ -30,7 +30,7 @@ function SignUp() {
     localStorage.setItem("isSignedIn", true);
     localStorage.setItem("userEmail", email);
     
-    navigate('/home');
+    navigate('/');
   };
 
   return (
