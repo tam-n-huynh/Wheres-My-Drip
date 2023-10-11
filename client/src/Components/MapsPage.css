@@ -18,3 +18,13 @@
 .Drip-Button + .Drip-Button {
     margin-left: 1em;
 }
+
+.MapsPage {
+    padding-top: 5.5em;
+}
+
+@media (max-width: 800px) {
+    .MapsPage {
+        padding-top: 65px;
+    }
+}
