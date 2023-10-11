@@ -10,7 +10,7 @@ import Drop from "../img/drop.png";
 const NewMap = ({ center, zoom }) => {
 
     const {isLoaded} = useLoadScript({ 
-        googleMapsApiKey: "AIzaSyCt9A4-RUvMU5P-ttrURke6ktO4Ju2pKbc",
+        googleMapsApiKey: process.env.REACT_APP_GMAP_KEY,
     });
 
     const [latitude, setLatitude] = useState(null);
@@ -135,7 +135,7 @@ const NewMap = ({ center, zoom }) => {
             </GoogleMap>
         </div>
     ) : <>
-        <div>Hello</div>
+        <div>Loading...</div>
     </>
   );
 }

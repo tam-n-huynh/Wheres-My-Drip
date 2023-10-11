@@ -6,7 +6,7 @@ import "./MapsPage.css";
 
 
 // Replace with your own Google Maps API key
-const apiKey = process.env.REACT_APP_GOOGLE_CLOUD_API_KEY;
+const apiKey = process.env.REACT_APP_GMAP_KEY;
 
 const markersTest = [
     { latitude: 37.7749, longitude: -122.4194, title: 'San Francisco' },
