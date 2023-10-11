@@ -50,7 +50,7 @@ function SignIn() {
         // User found
         localStorage.setItem("isSignedIn", true);
         localStorage.setItem("userEmail", email);
-        navigate('/home');
+        navigate('/');
         // console.log(email);
         // console.log(userData.Name);
     }   else {
@@ -89,7 +89,7 @@ function SignIn() {
           Sign In
         </button>
       </form>
-      <p>Don't have an account? <Link to="/">Sign Up</Link></p>
+      <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
     </div>
   );
 }
