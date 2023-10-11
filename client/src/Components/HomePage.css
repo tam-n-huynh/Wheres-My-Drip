@@ -3,10 +3,9 @@
     justify-content: center;
 }
 
-.profile-image {
-    width: 10vw;
-    height: 10vw;
-    margin: 10px;
+.profile-img {
+    min-width: 100px;
+    height: 100px;
     border-radius: 50%; /* Creates a circular shape */
     overflow: hidden;
     object-fit: cover; /* Ensures the image fills the circle without stretching */
@@ -38,7 +37,7 @@
     transition-delay: 0.8s;
 }
 
-.heading {
+.mission-heading {
     text-align: center;
     font-size: 5vw;
     height: 7vw;
@@ -88,12 +87,57 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), transparent;
     background-image: url("../images/cleanOcea.jpg");
+    margin-bottom: 0;
+}
+
+.wel-h, .wel-p {
+    opacity: 0;
+    transition-duration: 2s;
+}
+
+.wel-h {
+    text-align: center;
+}
+
+.mission-wrapper {
+    background-color: var(--clr-bg);
+    margin-top: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.ornament {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.70;
+}
+
+.founder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .show {
     opacity: 1;
     transform: translateX(0%) translateY(0%);
+}
+
+@media (max-width: 800px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bio-1, .bio-2, .bio-3, .bio-4 {
+        flex-direction: row;
+    }
 }

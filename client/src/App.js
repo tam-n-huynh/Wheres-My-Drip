@@ -22,19 +22,21 @@ function App() {
   return (
       <div className="App">
           <Router>
-            <div className="nav reactive-nav">
-                <img src={logo} className="logo" />
-                <Link className="link" to="/home">
-                    <button className="menu-button" >Home</button>
-                </Link>
-                <Link className="link" to="/newmap">
-                    <button className="menu-button">Map</button>
-                </Link>
-                <Link className="link" to="/profile">
-                      <button className="menu-button profile-button">
-                          <span className="profile"><img src={user}/></span>
-                      </button>
-                </Link>
+            <div className="nav-wrapper">
+                <div className="nav reactive-nav">
+                    <img src={logo} className="logo" />
+                    <Link className="link" to="/home">
+                        <button className="menu-button" >Home</button>
+                    </Link>
+                    <Link className="link" to="/newmap">
+                        <button className="menu-button">Map</button>
+                    </Link>
+                    <Link className="link" to="/profile">
+                        <button className="menu-button profile-button">
+                            <span className="profile"><img src={user}/></span>
+                        </button>
+                    </Link>
+                </div>
             </div>
         
             <Routes>

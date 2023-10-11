@@ -92,9 +92,9 @@
         transition: transform 200ms ease-in-out;
     }
 
-        .btn:hover {
-            transform: scale(1.1);
-        }
+    .btn:hover {
+        transform: scale(1.1);
+    }
 
     /* Typography */
 
@@ -131,9 +131,9 @@
         transition-duration: 500ms;
     }
 
-        .section__title--intro strong {
-            display: block;
-        }
+    .section__title--intro strong {
+        display: block;
+    }
 
     .section__subtitle--intro,
     .section__subtitle--about {
@@ -149,16 +149,29 @@
 
     .App {
         font-family: var(--ff-primary);
-        background-color: var(--clr-bg);
-        height: 200vh;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--clr-light);
     }
 
     .nav {
-        background-color: var(--clr-light);
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         color: var(--clr-dark);
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+        max-width: 1200px;
+        width: 100%
     }
 
     .menu-button {
@@ -174,6 +187,7 @@
         height: 10vh;
         justify-content: center;
         cursor: pointer;
+        transition-duration: 0.5s;
     }
 
     .profile-button {
@@ -188,8 +202,8 @@
     }
 
     .logo {
-        width: 15vw;
-        height: auto;
+        height: 100px;
+        max-height: 200px;
     }
 
     .profile {
@@ -197,5 +211,13 @@
     }
 
     .menu-button:hover {
+        color: white;
         background-color: var(--clr-tile2);
+    }
+
+
+    @media (max-width: 800px) {
+        .logo {
+            height: 60px;
+        }
     }

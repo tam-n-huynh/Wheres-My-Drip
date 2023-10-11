@@ -6,8 +6,7 @@ import customMapStyle from './customMapStyle.json'; // Custom Map Style
 import "./MapsPage.css";
 import Drop from "../img/drop.png";
 
-
-const NewMap = ({ center, zoom }) => {
+const NewMap = () => {
 
     const {isLoaded} = useLoadScript({ 
         googleMapsApiKey: process.env.REACT_APP_GMAP_KEY,
