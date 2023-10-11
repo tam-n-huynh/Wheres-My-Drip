@@ -40,7 +40,7 @@ function App() {
             </div>
         
             <Routes>
-                <Route path="/" element={<SignUp />} />
+                <Route path="/" element={<HomePage />} />
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/add" element={<AddWaterPage />} />
