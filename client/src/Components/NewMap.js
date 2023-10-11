@@ -89,7 +89,7 @@ const NewMap = () => {
             latitude: curlat,
             longitude: curlon
         })
-        window.location.reload(false);
+        window.location.reload(true);
     }
 
   return (

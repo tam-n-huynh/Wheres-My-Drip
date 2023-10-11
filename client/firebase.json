@@ -5,6 +5,18 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source":"*",
+        "destination": "/index.html"
+      }
+    ],
+    "error-pages": [
+      {
+        "code": "404",
+        "path": "/public/404.html"
+      }
     ]
   }
 }
